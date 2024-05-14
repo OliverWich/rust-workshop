@@ -1,0 +1,20 @@
+# Rust-Workshop
+
+###
+# @name Get /books
+GET localhost:8080/books
+
+###
+# @name Get specific book
+GET localhost:8080/books/1
+
+###
+# @name Neues Buch hinzufügen
+POST localhost:8080/books
+Content-Type: application/json
+
+{
+  "title": "Mathe für Dummies",
+  "author": "Daniel Jung",
+  "year": 2009
+}
