@@ -17,28 +17,6 @@ fn main () {
     }
 }
 
-fn ask_for_retry() -> bool {
-    loop {
-        println!("Möchten Sie nochmal spielen? (J/n)");
-
-        let mut play_again = String::new();
-        io::stdin().read_line(&mut play_again).expect("Fehler beim Einlesen der Antwort");
-
-        let raw_command = play_again.trim().to_lowercase();
-
-        let command = if raw_command.is_empty() { "j" } else { &raw_command };
-
-        match command {
-            "j" => return true,
-            "n" => return false,
-            _ => {
-                println!("Ungültige Eingabe! Bitte geben Sie \"j\" oder \"n\" ein.");
-                continue;
-            }
-        }
-    }
-}
-
 fn game_loop() {
     let number = thread_rng().gen_range(1..=100);
     let mut tries = 0;
@@ -69,6 +47,28 @@ fn game_loop() {
         if tries >= MAX_TRIES {
             println!("Sie haben keine Versuche mehr! Die gesuchte Zahl war: {}", number);
             break;
+        }
+    }
+}
+
+fn ask_for_retry() -> bool {
+    loop {
+        println!("Möchten Sie nochmal spielen? (J/n)");
+
+        let mut play_again = String::new();
+        io::stdin().read_line(&mut play_again).expect("Fehler beim Einlesen der Antwort");
+
+        let raw_command = play_again.trim().to_lowercase();
+
+        let command = if raw_command.is_empty() { "j" } else { &raw_command };
+
+        match command {
+            "j" => return true,
+            "n" => return false,
+            _ => {
+                println!("Ungültige Eingabe! Bitte geben Sie \"j\" oder \"n\" ein.");
+                continue;
+            }
         }
     }
 }
