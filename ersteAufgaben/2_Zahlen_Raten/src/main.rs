@@ -21,9 +21,12 @@ fn game_loop() {
     let number = thread_rng().gen_range(1..=100);
     let mut tries = 0;
 
+    let mut guess = String::new();
+
     loop {
-        let mut guess = String::new();
         println!("Bitte geben Sie eine Zahl ein. Sie haben noch {} Versuche:", MAX_TRIES - tries);
+
+        guess.clear();
         io::stdin().read_line(&mut guess).expect("Fehler beim Einlesen der Zahl");
 
         let guessed_number: i32 = match guess.trim().parse() {
@@ -52,10 +55,12 @@ fn game_loop() {
 }
 
 fn ask_for_retry() -> bool {
+    let mut play_again = String::new();
+
     loop {
         println!("Möchten Sie nochmal spielen? (J/n)");
 
-        let mut play_again = String::new();
+        play_again.clear();
         io::stdin().read_line(&mut play_again).expect("Fehler beim Einlesen der Antwort");
 
         let raw_command = play_again.trim().to_lowercase();
