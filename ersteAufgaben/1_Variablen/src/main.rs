@@ -5,45 +5,42 @@ Aufgabe 1
 // sodass beim ausführen des Programms Erfolgreich angezeigt wird.
 */
 
-fn main() {
-    let x: i32; // Benutzt aber uninitialisiert, ERROR !
-    let y: i32; // Nicht benutzt aber auch uninitialisiert, nur eine Warnung !
+// fn main() {
+//     let x: i32 = 5; // Benutzt aber uninitialisiert, ERROR !
+//     let y: i32; // Nicht benutzt aber auch uninitialisiert, nur eine Warnung !
+// 
+//     assert_eq!(x, 5);
+//     println!("Erfolgreich!");
+// }
 
-    assert_eq!(x, 5);
-    println!("Erfolgreich!");
-}
 
 
 
-/*
-Aufgabe 2
+// Aufgabe 2
 // Fülle die Lücken aus, sodass der Code kompiliert und erfolgreich ausgeführt wird. 
 // Hinweis: Benutze das Schlüsselwort mut, um eine Variable veränderbar zu machen.
 
 //Unkommentiere den folgenden Code, und Kommentiere den Code aus den vergangenen Aufgaben aus.
-fn main() {
-    let __ __ = 1;
-    __ += 2; 
-    
-    assert_eq!(x, 3);
-    println!("Success!");
-}
-
-*/
+// fn main() {
+//     let mut x = 1;
+//     x += 2; 
+//     
+//     assert_eq!(x, 3);
+//     println!("Success!");
+// }
 
 
-/*
-Aufgabe 3
+
+//Aufgabe 3
 
 // Behebe den Fehler unter Benutzung von definiere_x() (darf abgeändert werden)
 // Tipp: Benutze String und nicht &str
 //Unkommentiere den folgenden Code, und Kommentiere den Code aus den vergangenen Aufgaben aus.
 
 fn main() {
-    println!("{}, world", x); 
+    println!("{}, world", definiere_x()); 
 }
 
-fn definiere_x() {
-    let x = "hello";
+fn definiere_x() -> String {
+    "Hello".to_string()
 }
-*/
