@@ -66,7 +66,6 @@ fn game_loop() {
         }
 
         tries += 1;
-
         if tries >= MAX_TRIES {
             println!("Sie haben keine Versuche mehr! Die gesuchte Zahl war: {}", number);
             break;
